@@ -1,13 +1,7 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Ohne Docker') {
-            steps {
-                sh 'echo "Hello World, ohne Docker"'
-            }
-        }
-        
+    stages {       
         stage('Mit Docker') {
             agent {
                 docker {
