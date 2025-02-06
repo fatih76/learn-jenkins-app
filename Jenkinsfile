@@ -2,9 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Hello mit Docker') {
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                }
+            }
+
             steps {
-                echo 'Hello World'
+                sh '''
+                echo 'Hello World, mit Docker'
+                touch exe-container.txt
+                node --version
+                npm --version
+                '''
             }
         }
     }
