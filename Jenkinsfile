@@ -14,8 +14,10 @@ pipeline {
                 sh '''
                 echo 'Hello World, mit Docker'
                 touch exe-container.txt
+                ls -la
                 node --version
                 npm --version
+                npm ci
                 '''
             }
         }
